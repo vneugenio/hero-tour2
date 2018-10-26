@@ -1,0 +1,30 @@
+ SCRIPT5022: SCRIPT5022: Template parse errors:
+Only void and foreign elements can be self closed "app-heroes" ("
+    Welcome to {{ title }}, {{ whoAmI }}!
+  /h1>
+  [ERROR ->]app-heroes />
+  img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0ia"): ng:///AppModule/AppComponent.html@5:2
+  ____________________
+notes for -----  app.module.ts -----
+-- imported modules should be declared at the top of the file
+-- imported modules are only included as imports in :
+app.module.ts //->
+@NgModule.imports
+
+-- created components should be declared at the top of the file
+-- created components should be declared in @NgModule declarations
+app.module.ts //->
+@NgModule.declarations
+
+____________________
+-- The example below creates an <li> for every iteration in the array of heroes:
+-- <li> being the host element
+-- *ngFor="let hero of heroes" 
+    - heroes being the array source (from hero component.ts), and hero as the placeholder for each iteration / element in the heroes array
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
